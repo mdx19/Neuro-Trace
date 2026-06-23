@@ -1,0 +1,27 @@
+# Models (too large for GitHub)
+Models/
+
+# Virtual environment
+Deployment/myenv/
+
+# Python cache
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+
+# Node modules
+Frontend/node_modules/
+
+# React build
+Frontend/build/
+
+# Environment files
+.env
+*.env
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/

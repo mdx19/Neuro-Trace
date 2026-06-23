@@ -1,0 +1,61 @@
+# Node
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
+/build/
+/dist/
+/.cache/
+/.parcel-cache/
+/.vite/
+
+# Environment files
+.env
+.env.*.local
+.env.local
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage
+coverage/
+coverage-*.json
+
+# Misc
+*.log
+pids/
+*.pid
+.temp/
+
+# Frontend-specific
+# compiled static build (if produced locally)
+build/
+
+# Lockfiles (ignore if you prefer tracking them)
+# package-lock.json
+# yarn.lock
+
+# Optional: local development overrides
+local.env
+
+# PDF worker caches, binaries etc
+*.worker.js
+
+# End of file
