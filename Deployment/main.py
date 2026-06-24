@@ -15,6 +15,39 @@ import uvicorn
 import pandas as pd
 import logging
 from PIL import Image
+import os
+from huggingface_hub import hf_hub_download
+
+def download_models():
+    """Download models from Hugging Face if not present locally"""
+    repo_id = "mdx1910/neuro-trace-models"
+    models_dir = "../Models"
+    os.makedirs(models_dir, exist_ok=True)
+    
+    files = [
+        "config.json",
+        "metadata.json", 
+        "model.weights.h5",
+        "mlp_dementia_model.h5",
+        "meta_xgb_safe.pkl",
+        "preprocessor.pkl"
+    ]
+    
+    for filename in files:
+        dest = os.path.join(models_dir, filename)
+        if not os.path.exists(dest):
+            print(f"Downloading {filename}...")
+            hf_hub_download(
+                repo_id=repo_id,
+                filename=filename,
+                local_dir=models_dir
+            )
+            print(f"✅ {filename} downloaded")
+        else:
+            print(f"✅ {filename} already exists")
+
+# Download models on startup
+download_models()
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
