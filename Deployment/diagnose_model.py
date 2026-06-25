@@ -8,7 +8,7 @@ import requests
 import json
 import numpy as np
 
-BASE_URL = "http://localhost:9000"
+BASE_URL = "https://mdx1910-neuro-trace-api.hf.space"
 
 def test_extreme_dementia_case():
     """Test with extremely clear dementia indicators"""

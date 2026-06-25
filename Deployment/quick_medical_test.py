@@ -8,7 +8,7 @@ import requests
 import json
 
 # Server URL
-BASE_URL = "http://localhost:9000"
+BASE_URL = "https://mdx1910-neuro-trace-api.hf.space"
 
 # Test cases from your data - I've marked the expected outcomes based on clinical indicators
 TEST_CASES = [

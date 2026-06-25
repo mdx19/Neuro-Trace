@@ -44,9 +44,9 @@ def check_models():
 def start_server():
     """Start the Neuro Trace API server"""
     print("🚀 Starting Neuro Trace API Server...")
-    print("   Access at: http://localhost:9000")
-    print("   API Docs: http://localhost:9000/docs")
-    print("   Sample Data: http://localhost:9000/sample-data/positive")
+    print("   Access at: https://mdx1910-neuro-trace-api.hf.space")
+    print("   API Docs: https://mdx1910-neuro-trace-api.hf.space/docs")
+    print("   Sample Data: https://mdx1910-neuro-trace-api.hf.space/sample-data/positive")
     print()
     
     try:

@@ -252,7 +252,7 @@ def main():
     
     # Check if server is running
     try:
-        response = requests.get("http://localhost:9000/health", timeout=5)
+        response = requests.get("https://mdx1910-neuro-trace-api.hf.space/health", timeout=5)
         if response.status_code == 200:
             print("✅ Server is running and healthy!")
         else:
