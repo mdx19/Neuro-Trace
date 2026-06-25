@@ -2,7 +2,7 @@ fastapi
 uvicorn[standard]
 numpy
 shap
-opencv-python
+opencv-python-headless
 tensorflow
 keras
 xgboost
@@ -10,4 +10,6 @@ joblib
 pandas
 scikit-learn
 python-multipart
-
+pillow
+huggingface_hub
+dill
