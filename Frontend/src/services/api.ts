@@ -4,9 +4,8 @@ import { PatientFeatures, PredictionResponse } from '../types';
 // Base API configuration
 // In development, use proxy. In production, use full URL
 // NEW
-const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://mdx1910-neuro-trace-api.hf.space'
-  : ''; // Empty string uses the proxy defined in package.json
+const API_BASE_URL = 'https://mdx1910-neuro-trace-api.hf.space';
+ // Empty string uses the proxy defined in package.json
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
