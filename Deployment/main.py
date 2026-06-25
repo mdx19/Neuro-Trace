@@ -58,20 +58,6 @@ def download_models():
         else:
             logger.info(f"✅ {filename} already exists")
 
-@app.on_event("startup")
-async def startup_event():
-    logger.info("🚀 Starting Neuro Trace API...")
-    import threading
-    def background_setup():
-        try:
-            download_models()
-            load_models_if_needed()
-            logger.info("✅ All models ready!")
-        except Exception as e:
-            logger.error(f"❌ Setup failed: {e}")
-    threading.Thread(target=background_setup, daemon=True).start()
-    logger.info("✅ Server started! Models loading in background...")
-
 # -------------------
 # Paths to models (absolute paths - works on any OS)
 # -------------------
@@ -254,7 +240,6 @@ def extract_features_from_json(features_json: Union[dict, str]):
 
 def extract_features_from_form(form_data: str):
     try:
-        # Try JSON first
         return json.loads(form_data)
     except json.JSONDecodeError:
         try:
@@ -523,12 +508,13 @@ async def test_labels():
     return {"class_labels": class_labels, "label_mapping": "0=Non-Dementia, 1=Dementia"}
 
 # -------------------
-# Startup
+# Startup — download models then load them
 # -------------------
 @app.on_event("startup")
 async def startup_event():
     logger.info("🚀 Starting Neuro Trace API...")
     try:
+        download_models()
         load_models_if_needed()
         logger.info("✅ Neuro Trace API ready!")
     except Exception as e:
