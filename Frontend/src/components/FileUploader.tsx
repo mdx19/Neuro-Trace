@@ -65,7 +65,9 @@ const FileUploader: React.FC<FileUploaderProps> = ({ userMode, onDataExtracted, 
       setIsProcessing(true);
       const loadingToast = toast.loading(`Loading ${type} sample data...`);
       
-      const response = await fetch(`http://localhost:9000/sample-data/${type}`);
+      const response = await fetch(
+      `https://mdx1910-neuro-trace-api.hf.space/sample-data/${type}`
+      );
       if (!response.ok) {
         throw new Error(`Failed to load sample data: ${response.statusText}`);
       }
@@ -87,7 +89,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({ userMode, onDataExtracted, 
       
     } catch (error) {
       console.error('Error loading sample data:', error);
-      toast.error(`Failed to load sample data. Make sure the API is running on port 9000.`);
+      toast.error("Failed to load sample data from the API.");
     } finally {
       setIsProcessing(false);
     }

@@ -82,7 +82,9 @@ const ManualEntryForm: React.FC<ManualEntryFormProps> = ({
     try {
       const loadingToast = toast.loading(`Loading ${type} sample data...`);
       
-      const response = await fetch(`http://localhost:9000/sample-data/${type}`);
+      const response = await fetch(
+      `https://mdx1910-neuro-trace-api.hf.space/sample-data/${type}`
+      );
       if (!response.ok) {
         throw new Error(`Failed to load sample data: ${response.statusText}`);
       }
@@ -114,7 +116,7 @@ const ManualEntryForm: React.FC<ManualEntryFormProps> = ({
       
     } catch (error) {
       console.error('Error loading sample data:', error);
-      toast.error(`Failed to load sample data. Make sure the API is running on port 9000.`);
+      toast.error("Failed to load sample data from the API.");
     }
   };
 

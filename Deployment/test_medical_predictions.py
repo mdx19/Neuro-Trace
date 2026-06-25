@@ -86,7 +86,7 @@ TEST_DATA = [
 ]
 
 class MedicalDataTester:
-    def __init__(self, base_url: str = "http://localhost:9000"):
+    def __init__(self, base_url: str = "https://mdx1910-neuro-trace-api.hf.space"):
         self.base_url = base_url
         self.results = []
         
