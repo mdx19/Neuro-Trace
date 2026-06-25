@@ -2,7 +2,7 @@ fastapi
 uvicorn[standard]
 numpy
 pandas
-opencv-python
+opencv-python-headless
 tensorflow
 keras
 scikit-learn
