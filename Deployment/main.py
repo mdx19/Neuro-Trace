@@ -58,7 +58,19 @@ def download_models():
         else:
             logger.info(f"✅ {filename} already exists")
 
-download_models()
+@app.on_event("startup")
+async def startup_event():
+    logger.info("🚀 Starting Neuro Trace API...")
+    import threading
+    def background_setup():
+        try:
+            download_models()
+            load_models_if_needed()
+            logger.info("✅ All models ready!")
+        except Exception as e:
+            logger.error(f"❌ Setup failed: {e}")
+    threading.Thread(target=background_setup, daemon=True).start()
+    logger.info("✅ Server started! Models loading in background...")
 
 # -------------------
 # Paths to models (absolute paths - works on any OS)
